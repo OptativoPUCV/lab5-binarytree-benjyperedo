@@ -188,3 +188,16 @@ Tue 07 May 2024 07:08:13 PM UTC:
  tests:  22|2
 total_score: 50/70
 ed47372
+Tue 07 May 2024 07:10:08 PM UTC: 
+ treemap.c | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘upperBound’:
+treemap.c:160:21: error: expected ‘;’ before ‘}’ token
+  160 |     return aux->pair
+      |                     ^
+      |                     ;
+  161 | }
+      | ~                    
+Compilation failed
+f935ad9
