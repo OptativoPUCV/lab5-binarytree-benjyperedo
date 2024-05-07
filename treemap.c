@@ -170,5 +170,24 @@ Pair * firstTreeMap(TreeMap * tree) {
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
+    TreeNode * aux = tree->current;
+    if (aux == NULL) return NULL;
+    if (aux->right != NULL)
+    {
+        aux = aux->right;
+        while (aux->left != NULL){
+            aux = aux->left;
+        }
+        tree->current = aux;
+        return aux->pair;
+    }
+    else{
+        while (aux->parent != NULL && aux->parent->right == aux){
+            aux = aux->parent;
+        }
+        tree->current = aux->parent;
+        if (aux->parent == NULL) return NULL;
+        return aux->parent->pair;
+    }
     return NULL;
 }
